@@ -9,17 +9,15 @@ namespace Algortithms
     public class SelectionSort
     {
         //https://www.geeksforgeeks.org/selection-sort/
-        public void Execute()
-        {
-            int[] data = { 64, 25, 12, 22, 11 };
-
+        public void Execute(int[] data)
+        {         
             //Time Complexity: O(n2) 
             Sort(data);
 
-            PrintArray(data);
+            Utility.PrintArray(data,"Selection Sort");
         }
         
-        public void Sort(int[] data)
+        private void Sort(int[] data)
         {
             // One by one move boundary of unsorted subarray
             for (int i = 0; i < data.Length - 1; i++)
@@ -46,17 +44,6 @@ namespace Algortithms
             int temp = data[iMin];
             data[iMin] = data[i];
             data[i] = temp;
-        }
-
-        private void PrintArray(int[] data)
-        {
-            for (int i = 0; i < data.Length; i++)
-                Console.Write("{0} \t", data[i]);
-
-            Console.WriteLine();
-        }
-       
-
-        
+        }       
     }
 }

@@ -11,21 +11,33 @@ namespace Algortithms
         static void Main(string[] args)
         {
            
-               int algo = Convert.ToInt32(Algorithms.SelectionSort);
+             int algo = Convert.ToInt32(Algorithms.InsertionSort);
 
-                switch (algo)
-                {
-                    case (int)Algorithms.SelectionSort:
-                        new SelectionSort().Execute();
-                        break;
-                    
+            int[] data = { 5, 4, 3, 2, 1 };
+            int[] data2 = { 64, 25, 12, 22, 11 };
 
-                }
+            switch (algo)
+            {
+                case (int)Algorithms.SelectionSort:
+                    new SelectionSort().Execute(data);
+                    break;
+
+                case (int)Algorithms.BubbleSort:
+                    new BubbleSort().Execute(data);
+                    break;
+
+                case (int)Algorithms.InsertionSort:
+                    new InsertionSort().Execute(data);
+                    break;
+
+            }
             }        
     }
 
     enum Algorithms
     {
-        SelectionSort
+        SelectionSort=0,
+        BubbleSort=1,
+        InsertionSort=2
     }
 }
