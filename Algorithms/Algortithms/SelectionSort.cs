@@ -19,8 +19,9 @@ namespace Algortithms
         
         private void Sort(int[] data)
         {
+            int n = data.Length;
             // One by one move boundary of unsorted subarray
-            for (int i = 0; i < data.Length - 1; i++)
+            for (int i = 0; i < n - 1; i++)
             {
                 int iMin = i;
                 iMin = FindMinInUnSortedArray(data, i, iMin);
