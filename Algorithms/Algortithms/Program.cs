@@ -11,11 +11,11 @@ namespace Algortithms
         static void Main(string[] args)
         {
            
-             int algo = Convert.ToInt32(Algorithms.MergeSort);
+             int algo = Convert.ToInt32(Algorithms.QuickSort);
 
             int[] data = { 5, 4, 3, 2, 1 };
             int[] data2 = { 64, 25, 12, 22, 11 };
-            int[] data3 = { 2,4,1,6,8,5,3,7,99 };
+            int[] data3 = { 2,4,1,6,8,5,3,7,9 };
             int[] data4 = { 2, 4, 3,1 };
 
             switch (algo)
@@ -36,6 +36,10 @@ namespace Algortithms
                     new MergeSort().Execute(data3);
                     break;
 
+               case (int)Algorithms.QuickSort:
+                    new QuickSort().Execute(data3);
+                    break;
+
             }
             }        
     }
@@ -45,6 +49,7 @@ namespace Algortithms
         SelectionSort=0,
         BubbleSort=1,
         InsertionSort=2,
-        MergeSort=3
+        MergeSort=3,
+        QuickSort=4
     }
 }
