@@ -14,7 +14,10 @@ namespace Algortithms
             Utility.PrintArray(data);
             //Time Complexity: O(logn) 
             int result = Search(data, searchElement);
-            Console.WriteLine("Result: {0}",result);
+            Console.WriteLine("Result by iterator search: {0}",result);
+
+            int result2 = SearchByRecursion(data, searchElement,0,data.Length-1);
+            Console.WriteLine("Result by recusrion search: {0}",result2);
         }
 
         private int Search(int[] data, int searchElement)
@@ -37,6 +40,20 @@ namespace Algortithms
                     end = mid - 1;
             }
             return -1;
+        }
+
+        private int SearchByRecursion(int[] data,int searchElement,int start,int end)
+        {
+            if (start > end) return -1;
+
+            int mid = (start + end) / 2;
+
+            if (data[mid] == searchElement)
+                return mid;
+            else if (searchElement > data[mid])
+                return SearchByRecursion(data, searchElement, mid + 1, end);
+            else
+                return SearchByRecursion(data, searchElement, start, mid - 1);
         }
     }
 }
